@@ -37,6 +37,7 @@ class ReactNYC extends React.Component {
   render() {
     const defaultPosition = [40.7831, -73.9712];
     const defaultZoom = 12;
+    const mapboxType = this.props.mapboxType ? this.props.mapboxType : "streets";
 
     return (
       <div>
@@ -49,7 +50,7 @@ class ReactNYC extends React.Component {
         >
 
         <TileLayer
-          url={`https://api.tiles.mapbox.com/v4/mapbox.${this.props.mapboxType ? this.props.mapboxType : "streets"}/{z}/{x}/{y}.png?access_token=${this.props.mapboxAccessToken}`}
+          url={`https://api.tiles.mapbox.com/v4/mapbox.${mapboxType}/{z}/{x}/{y}.png?access_token=${this.props.mapboxAccessToken}`}
           attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> | &copy; <a href=&quot;http://mapbox.com&quot;>Mapbox</a>"
         />
 
@@ -64,9 +65,8 @@ class ReactNYC extends React.Component {
               let dataValues = null;
               this.props.data && this.props.data.map(curr => { if(currName === curr.name) dataValues = curr.values });
               return (
-                <div>
+                <div key={index}>
                   <GeoJSON
-                    key={index}
                     data={curr}
                     style={this.style}
                     onmouseover={event => this.handleMouseEnter(event, curr.properties["wof:name"])}
