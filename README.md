@@ -93,8 +93,8 @@ Name  | Type | Default | Req/Opt | Description
 `neighborhoodOn` | boolean | `true` | Optional | Indicates whether the neighborhood tiles should be displayed. Default value is `true`
 `tooltip` | boolean | `true` | Optional | Indicates whether the tooltip should appear when hovering over a neighborhood tile. Default value is `true`
 `tooltipSticky` | boolean | `false` | Optional | If `true`, the tooltip will follow the mouse instead of being fixed at the feature center. Default value is `false`
-`neighborhoodStyle` | object | | Optional | Style of the neighborhood tile. Default is `{ weight: 1, opacity: 1, color: '#666', dashArray: '3', fillOpacity: 0.7 }`
-`neighborhoodHoverStyle` | object | | Optional | Style of the neighborhood tile when hovered over. Default is `{ weight: 5, color: '#FFF', dashArray: '1', fillOpacity: 0.7 }`
+`neighborhoodStyle` | object | | Optional | Style of the neighborhood tile. This overrides the default style, which is `{ weight: 1, opacity: 1, color: '#666', dashArray: '3', fillOpacity: 0.7 }`
+`neighborhoodHoverStyle` | object | | Optional | Style of the neighborhood tile when hovered over. This overrides the default style, which is `{ weight: 5, color: '#FFF', dashArray: '1', fillOpacity: 0.7 }`
 `excludeNeighborhoods` | array | | Optional | To exclude any neighborhoods from the map, provide the neighborhood names in an array. Default will show all 38 neighborhoods
 `data` | array | | Optional | See the Data section below for details
 
