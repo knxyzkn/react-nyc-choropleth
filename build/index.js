@@ -17836,6 +17836,7 @@ var ReactNYC = function (_React$Component) {
 
       var defaultPosition = [40.7831, -73.9712];
       var defaultZoom = 12;
+      var mapboxType = this.props.mapboxType ? this.props.mapboxType : "streets";
 
       return _react2.default.createElement(
         'div',
@@ -17850,7 +17851,7 @@ var ReactNYC = function (_React$Component) {
             style: { width: this.props.mapWidth, height: this.props.mapHeight, marginBottom: '60px' }
           },
           _react2.default.createElement(_reactLeaflet.TileLayer, {
-            url: 'https://api.tiles.mapbox.com/v4/mapbox.' + this.props.mapboxType + '/{z}/{x}/{y}.png?access_token=' + this.props.mapboxAccessToken,
+            url: 'https://api.tiles.mapbox.com/v4/mapbox.' + mapboxType + '/{z}/{x}/{y}.png?access_token=' + this.props.mapboxAccessToken,
             attribution: '\xA9 <a href="http://osm.org/copyright">OpenStreetMap</a> | \xA9 <a href="http://mapbox.com">Mapbox</a>'
           }),
           (this.props.neighborhoodOn === undefined || this.props.neighborhoodOn) && _nyc.cityData.features.map(function (curr, index) {
@@ -17862,16 +17863,15 @@ var ReactNYC = function (_React$Component) {
 
             if (show) {
               var dataValues = null;
-              _this2.props.data.map(function (curr) {
+              _this2.props.data && _this2.props.data.map(function (curr) {
                 if (currName === curr.name) dataValues = curr.values;
               });
               return _react2.default.createElement(
                 'div',
-                null,
+                { key: index },
                 _react2.default.createElement(
                   _reactLeaflet.GeoJSON,
                   {
-                    key: index,
                     data: curr,
                     style: _this2.style,
                     onmouseover: function onmouseover(event) {
