@@ -9,7 +9,7 @@ Live Demo coming soon!
 ## Installation
 Using [npm](https://www.npmjs.com/):
 ```
-npm install --save react-nyc-neighborhoods
+npm install --save react-nyc-choropleth
 ```
 
 
