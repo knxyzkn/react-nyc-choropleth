@@ -3,7 +3,7 @@ React component for New York City choropleth map
 
 
 ## Demo
-Live Demo coming soon!
+[Live Demo](https://nyc-choro-demo.herokuapp.com)
 
 
 ## Installation
